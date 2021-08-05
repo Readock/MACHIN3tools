@@ -5,7 +5,7 @@ import gpu
 from gpu_extras.batch import batch_for_shader
 import bgl
 from .. utils.graph import get_shortest_path
-from .. utils.ui import wrap_mouse
+from .. utils.ui import wrap_cursor
 
 
 modeitems = [("MERGE", "Merge", ""),
@@ -89,7 +89,7 @@ class SmartVert(bpy.types.Operator):
         events = ["MOUSEMOVE"]
 
         if event.type in events:
-            wrap_mouse(self, context, event, x=True)
+            wrap_cursor(self, context, event, x=True)
 
             offset_x = self.mouse_x - self.last_mouse_x
 
